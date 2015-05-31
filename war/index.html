@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<!-- Assets ->  images -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/practicescript.css" >  
+    
+      <script type="text/javascript" src="../js/practicejavascript.js"  > </script>  
+    
+    <title>Hello App Engine</title>
+    
+  </head>
+
+  <body>
+    <h1>Hello App Engine!</h1>
+	
+	<form action="practicevisaServlet" name="form" method="post" >  <!-- without the form name the javascript file cannot be invoked -->
+	
+		<div  style="height:665px; width:1365px; background:#E0FEFE; top:0px; left: 0px; position: absolute; ">
+		<div style="height:160px; width:350px; background:#00a5a5; top:200px; left: 100px; position: absolute;
+		border-radius:10px 10px 10px 10px; ">
+	
+		<div class="box" style="position: absolute; top: 20px; height: 50px; width: 50px; left: 18px">
+	            <label id="label" for="name" style="font-weight: bold; color: #333333 ">Email</label>
+	            <input id="Text" type="text" name="email" value="" class="textbox" required/>
+	         </div>
+	        
+	        <input id="Button" type="submit" value="Subscribe" onclick="javascript:ValidateEmail()" style="position: absolute; height: 40px; width: 310px; top: 90px; left: 18px; border: 0px; background-color: #333333; color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: x-large; border-radius:5px 5px 5px 5px;" />
+	        
+		</div>
+        </div>
+    
+    </form>
+  </body>
+</html>
