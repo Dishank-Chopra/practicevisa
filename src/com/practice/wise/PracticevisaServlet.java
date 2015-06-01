@@ -49,9 +49,10 @@ public class PracticevisaServlet extends HttpServlet {
 	         System.out.println(" flag is :  " +flag);
 	         if(flag)
 	         {
-	        	 System.out.println(" Got You!! ");
-	        	 dispatcher=getServletContext().getRequestDispatcher("index.html");		// request can also be used instead of getServletcontext
-	        	 dispatcher.forward(request, response);
+	        	 System.out.println(" connecting to index.html  ");
+	        	 response.sendRedirect("index.html");
+	        	 // dispatcher=getServletContext().getRequestDispatcher("index.html");		// request can also be used instead of getServletcontext
+	        	 // dispatcher.forward(request, response);
 	         }
 	         else
 	         {
@@ -62,7 +63,7 @@ public class PracticevisaServlet extends HttpServlet {
 		}			
 		catch(Exception e)
 		{
-			System.out.println("IO exception found");
+			System.out.println("Exception found regarding the dispachment of index.html!! ");
 		}
 		
 		// response.getWriter().println(" total users are: " +totalCount);

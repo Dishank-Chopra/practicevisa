@@ -8,7 +8,6 @@ import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Query;
 
-
 import java.io.IOException;
 import java.util.logging.*;
 
@@ -45,5 +44,4 @@ public class PracticeDatastore {
 		return true;
 	}
 
-	
 }
