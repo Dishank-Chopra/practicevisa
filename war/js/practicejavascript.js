@@ -17,7 +17,8 @@ function checkEmail(emailId) {
 
             if (checkEmail(emailID.value)==false){
                 emailID.value=""
-                alert("Invalid Email Address");
+            //    document.write(" Enter something valid!");
+                window.alert("Invalid Email Address");
                 emailID.focus()
                 return false
             }

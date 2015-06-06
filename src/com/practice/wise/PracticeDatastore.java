@@ -9,15 +9,20 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Query;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.*;
 
 public class PracticeDatastore {
 
+	// PracticeDatastore pd=new PracticeDatastore();
+	
 	private static final Logger log=Logger.getLogger(PracticeDatastore.class.getName());
 	private static DatastoreService datastore=DatastoreServiceFactory.getDatastoreService();
+	public static int totalCount=0;
 	
 	public static boolean saveUser(String emailId)
 	{
+	
 		// get user, if they don't exist create entity with default values
 		Entity user;
 		try
@@ -37,11 +42,24 @@ public class PracticeDatastore {
 		// count the total no. of records
 		
 		Query qry = new Query("User");
-		int totalCount = datastore.prepare(qry).countEntities(FetchOptions.Builder.withDefaults());
+		totalCount = datastore.prepare(qry).countEntities(FetchOptions.Builder.withDefaults());
 		
 		System.out.println(" total users are: " +totalCount);
+	
+		
+	//	log.info(qry.toString());
+	//	log.info(emailId);
 		
 		return true;
 	}
-
+	
+	
+	/*  public static void main(String args[])
+	{
+		PracticeDatastore pd=new PracticeDatastore();
+		PracticevisaServlet pvs=new PracticevisaServlet();
+		
+	}
+		*/
+	
 }
