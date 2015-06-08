@@ -8,23 +8,36 @@
 
 <!-- Assets ->  images -->
 
+
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/practicescript.css" >  
+    <link rel="stylesheet" type="text/css" href="css/practicescript.css" >  
     
-      <script type="text/javascript" src="../js/practicejavascript.js"  > </script>  
+      <script type="text/javascript" src="js/practicejavascript.js"  > </script>  
     
-    <title>Hello App Engine</title>
+    <title>Subscriber Page</title>
     
   </head>
 
-  <body>
-    <h1>Hello App Engine!</h1>
-	
+  <body img border="0" src="../bg.jpg" >
+  
 	<form action="practicevisaServlet" name="form" method="post" >  <!-- without the form name the javascript file cannot be invoked -->
-	
-		<div  style="height:665px; width:1365px; background:#E0FEFE; top:0px; left: 0px; position: absolute; ">
+	  	<div class="heading"> <p> Visawise </p>
+		</div>
+		
+		<div class="box">
+		</div>
+		
+		<div>
+		<input class="textbox1" id="Text" type="text" name="email" placeholder="ramesh@visawise.com" required/>
+	    <input class="button1" id="Button" type="submit" value="Subscribe" onclick="javascript:ValidateEmail()" />
+	    </div>  
+	  	
+	  	
+	  	<!-- 
+	  	
+	  	<div  style="height:665px; width:1365px; background:#E0FEFE; top:0px; left: 0px; position: absolute; ">   
 		<div style="height:160px; width:350px; background:#00a5a5; top:200px; left: 100px; position: absolute;
 		border-radius:10px 10px 10px 10px; ">
 	
@@ -37,6 +50,8 @@
 	        
 		</div>
         </div>
+        
+         -->
     
     </form>
   </body>

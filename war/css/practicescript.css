@@ -1,6 +1,74 @@
 @CHARSET "ISO-8859-1";
 
 <style>
+		
+        
+        body{  
+				min-height: 100%;
+				background-image: url("../bg.jpg");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-position: center center; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;   	
+			}
+			
+			@font-face {
+			font-family: myFirstFont;
+			src: url("poetsenone-regular.ttf");
+			}
+			
+			.heading{
+			font-family: myFirstFont;
+			color: #d23641;
+			font-size: 140px;
+			text-align: center; 
+			position: fixed;
+			left: 400px;
+			top: -90px;
+			}
+			
+			.box{ 
+			position: fixed;
+			opacity: 0.5; 
+			background:#235021; 
+			height:290px;
+			width:573px;
+			top:252px;
+			left: 402px; 
+			
+			}
+			
+			.textbox1{
+			position: fixed;
+            height:55px;
+			width:480px;
+			top: 385px; 
+			left: 449px;
+			font-size: 24px;
+			font-family: Arial, Helvetica, sans-serif;
+			border-style: none;
+			border-width: medium; 
+			padding:5px 10px 5px 15px;
+			}
+			
+			.button1{
+			position: fixed; 
+			height: 55px; 
+			width: 167px; 
+			top: 460px; 
+			left: 762px;
+			border: 0px; 
+			background-color: #db3082;
+			color: #000000; 
+			font-family: Arial, Helvetica, sans-serif; 
+			font-size: x-large; 
+			}
+			
+        
+     	/*
+        
         .box{display:block; float:left; width:20px; margin:0 45px 0 0; padding:0;}
         .textbox {
             display:block;
@@ -15,5 +83,6 @@
 			padding:5px 10px 5px 10px;
         }
 	
+		*/
 		
 	</style>
