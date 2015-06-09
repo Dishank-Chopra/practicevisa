@@ -14,45 +14,44 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/practicescript.css" >  
     
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
       <script type="text/javascript" src="js/practicejavascript.js"  > </script>  
-    
+        
     <title>Subscriber Page</title>
     
   </head>
 
-  <body img border="0" src="../bg.jpg" >
+  <body  data-ng-app="validationApp"  data-ng-controller="mainController">
   
-	<form action="practicevisaServlet" name="form" method="post" >  <!-- without the form name the javascript file cannot be invoked -->
+	 <form name="userForm" data-ng-submit="submitForm(userForm.$valid)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+	
+	<!-- <form action="practicevisaServlet" name="form" method="post" >  --> <!-- without the form name the javascript file cannot be invoked -->
+	
 	  	<div class="heading"> <p> Visawise </p>
 		</div>
 		
 		<div class="box">
+		
+		<!-- <p>{{ person }} passengers are travelling with us</p>   -->
+		
+
 		</div>
 		
 		<div>
-		<input class="textbox1" id="Text" type="text" name="email" placeholder="ramesh@visawise.com" required/>
-	    <input class="button1" id="Button" type="submit" value="Subscribe" onclick="javascript:ValidateEmail()" />
+		<input class="textbox1" id="Text" type="email" name="email" data-ng-model="email" placeholder="example@visawise.com" required/>   <!-- data-ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine } -->
+	    
+	    <span class="alerts"  data-ng-show="userForm.email.$invalid && !userForm.email.$pristine" >
+		<span data-ng-show="userForm.email.$error.required">Email is required.</span>
+		<span data-ng-show="userForm.email.$error.email">The Email you entered is incorrect !</span>
+		</span>
+	    
+	    
+	 <!--    <p data-ng-show="userForm.email.$invalid && !userForm.email.$pristine">Enter a valid email.</p>    -->
+	  
+	    <input class="button1" id="Button" type="submit" value="Subscribe"  data-ng-disabled="userForm.$invalid"  />  <!--  onclick="javascript:ValidateEmail()" -->  
 	    </div>  
-	  	
-	  	
-	  	<!-- 
-	  	
-	  	<div  style="height:665px; width:1365px; background:#E0FEFE; top:0px; left: 0px; position: absolute; ">   
-		<div style="height:160px; width:350px; background:#00a5a5; top:200px; left: 100px; position: absolute;
-		border-radius:10px 10px 10px 10px; ">
-	
-		<div class="box" style="position: absolute; top: 20px; height: 50px; width: 50px; left: 18px">
-	            <label id="label" for="name" style="font-weight: bold; color: #333333 ">Email</label>
-	            <input id="Text" type="text" name="email" value="" class="textbox" required/>
-	         </div>
-	        
-	        <input id="Button" type="submit" value="Subscribe" onclick="javascript:ValidateEmail()" style="position: absolute; height: 40px; width: 310px; top: 90px; left: 18px; border: 0px; background-color: #333333; color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: x-large; border-radius:5px 5px 5px 5px;" />
-	        
-		</div>
-        </div>
-        
-         -->
     
     </form>
+   
   </body>
 </html>

@@ -3,15 +3,15 @@
 <style>
 		
         
-        body{  
-				min-height: 100%;
-				background-image: url("../bg.jpg");
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-position: center center; 
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;   	
+        	body{  
+			min-height: 100%;
+			background-image: url("/practicevisa/war/css/bg.jpg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center center; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;   	
 			}
 			
 			@font-face {
@@ -37,7 +37,6 @@
 			width:573px;
 			top:252px;
 			left: 402px; 
-			
 			}
 			
 			.textbox1{
@@ -53,6 +52,17 @@
 			padding:5px 10px 5px 15px;
 			}
 			
+			@font-face {
+			font-family: myThirdFont;
+			src: url("frutiger lt 55 roman.ttf");
+			}
+			.alerts{
+			font-family: myThirdFont;
+			position: fixed;
+          	top: 450px; 
+			left: 449px;
+			}
+			
 			.button1{
 			position: fixed; 
 			height: 55px; 
@@ -65,24 +75,5 @@
 			font-family: Arial, Helvetica, sans-serif; 
 			font-size: x-large; 
 			}
-			
-        
-     	/*
-        
-        .box{display:block; float:left; width:20px; margin:0 45px 0 0; padding:0;}
-        .textbox {
-            display:block;
-            width:310px;
-			font-size: 24px;
-			color: black;
-			font-family: Arial, Helvetica, sans-serif;
-                        border-radius:5px 5px 5px 5px;
-			border-style: none;
-			border-width: medium;
-			height:40px; 
-			padding:5px 10px 5px 10px;
-        }
-	
-		*/
 		
 	</style>

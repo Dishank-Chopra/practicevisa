@@ -16,6 +16,7 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.practice.wise.PracticeDatastore;
+import com.google.gson.Gson;
 
 @SuppressWarnings("serial")
 public class PracticevisaServlet extends HttpServlet {
@@ -31,11 +32,30 @@ public class PracticevisaServlet extends HttpServlet {
 			throws IOException{
 		response.setContentType("text/plain");
 		PrintWriter out=response.getWriter();
-		 int totalCount=0;
+		// int totalCount=0;
+		 
+		 try{
+				
+				String email=request.getParameter("email");
+				PracticeDatastore count=new PracticeDatastore();
+				int totalcount=count.saveUser(email);
+				out.println(" total count  "  +totalcount);
+				request.setAttribute("count", totalcount);
+				
+				String json = new Gson().toJson(totalcount);
+				  response.setContentType("application/json");
+			//	 response.getWriter().write(json);
+				  	
+			}
+		 catch(Exception e)
+		 {
+			 System.out.println("Exception found!!");
+			 
+		 }
 		
 		// response.getWriter().println("Hello");
 		
-		 DatastoreService datastore=DatastoreServiceFactory.getDatastoreService();
+		/* DatastoreService datastore=DatastoreServiceFactory.getDatastoreService();
 	
 		RequestDispatcher dispatcher;
 		 boolean flag;
@@ -46,11 +66,11 @@ public class PracticevisaServlet extends HttpServlet {
 	         System.out.println(" Email is :  " +emailId);
 	         out.println("Hello  " +emailId);
 	         
-	      /*   Entity user=new Entity("RegUser",emailId);
+	         Entity user=new Entity("RegUser",emailId);
 		 	 user.setProperty("Name", emailId);
 	         
 		 	 datastore.put(user);
-		  */	
+		  	
 	        
 	         flag=PracticeDatastore.saveUser(emailId);
 	         System.out.println(" flag is :  " +flag);
@@ -75,7 +95,7 @@ public class PracticevisaServlet extends HttpServlet {
 		        
 		         // to show the total no of users on servlet that are present in datastore
 		        totalCount = datastore.prepare(q).countEntities(FetchOptions.Builder.withDefaults());
-	        	 out.println(" total users are: " +totalCount);
+	        	out.println(" total users are: " +totalCount);
 	        	
 	         }
 	         else
@@ -91,5 +111,5 @@ public class PracticevisaServlet extends HttpServlet {
 		}
 		
 		
-	}
+*/	}
 }

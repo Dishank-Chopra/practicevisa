@@ -20,7 +20,7 @@ public class PracticeDatastore {
 	private static DatastoreService datastore=DatastoreServiceFactory.getDatastoreService();
 	public static int totalCount=0;
 	
-	public static boolean saveUser(String emailId)
+	public static int saveUser(String emailId)
 	{
 	
 		// get user, if they don't exist create entity with default values
@@ -50,7 +50,7 @@ public class PracticeDatastore {
 	//	log.info(qry.toString());
 	//	log.info(emailId);
 		
-		return true;
+		return totalCount;
 	}
 	
 	
