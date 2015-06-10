@@ -10,48 +10,68 @@
 
 
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/practicescript.css" >  
-    
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
-      <script type="text/javascript" src="js/practicejavascript.js"  > </script>  
-        
-    <title>Subscriber Page</title>
-    
-  </head>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/practicescript.css">
 
-  <body  data-ng-app="validationApp"  data-ng-controller="mainController">
-  
-	 <form name="userForm" data-ng-submit="submitForm(userForm.$valid)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+<script type="text/javascript" src="js/practicejavascript.js"> </script>
+
+<title>Subscriber Page</title>
+
+</head>
+
+<body data-ng-app="validationApp">
+
+	<!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
+	<!-- <form action="practicevisaServlet" name="form" method="post" >  -->
 	
-	<!-- <form action="practicevisaServlet" name="form" method="post" >  --> <!-- without the form name the javascript file cannot be invoked -->
-	
-	  	<div class="heading"> <p> Visawise </p>
-		</div>
-		
+	<!-- without the form name the javascript file cannot be invoked -->
+
+	<div>
+		<img alt="" src="images/bg.jpg"
+			style="height: 667px; width: 1366px; top: 0px; left: 0px; position: absolute;">
+	</div>
+
+	<div class="heading">
+		<p>Visawise</p>
+	</div>
+
+	<div data-ng-app="validationApp" data-ng-strict-di>
 		<div class="box">
-		
-		<!-- <p>{{ person }} passengers are travelling with us</p>   -->
-		
-
+			<div data-ng-controller="myController">
+				<p>{{ person.totalcount }} passengers are travelling with us</p>
+			</div>
 		</div>
-		
-		<div>
-		<input class="textbox1" id="Text" type="email" name="email" data-ng-model="email" placeholder="example@visawise.com" required/>   <!-- data-ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine } -->
-	    
-	    <span class="alerts"  data-ng-show="userForm.email.$invalid && !userForm.email.$pristine" >
-		<span data-ng-show="userForm.email.$error.required">Email is required.</span>
-		<span data-ng-show="userForm.email.$error.email">The Email you entered is incorrect !</span>
-		</span>
-	    
-	    
-	 <!--    <p data-ng-show="userForm.email.$invalid && !userForm.email.$pristine">Enter a valid email.</p>    -->
-	  
-	    <input class="button1" id="Button" type="submit" value="Subscribe"  data-ng-disabled="userForm.$invalid"  />  <!--  onclick="javascript:ValidateEmail()" -->  
-	    </div>  
-    
-    </form>
-   
-  </body>
+
+
+		<div data-ng-controller="mainController">
+
+			<form name="userForm" data-ng-submit="submitForm(userForm.$valid)" action="practicevisaServlet"  method="post" novalidate>
+
+				<div>
+					<input class="textbox1" id="Text" type="email" name="email"
+						data-ng-model="email" placeholder="example@visawise.com" required />
+					<!-- data-ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine } -->
+
+					<span class="alerts"
+						data-ng-show="userForm.email.$invalid && !userForm.email.$pristine">
+						<span data-ng-show="userForm.email.$error.required">Email
+							is required.</span> <span data-ng-show="userForm.email.$error.email">The
+							Email you entered is incorrect !</span>
+					</span> 
+					<div data-ng-controller="registerController">
+					<input class="button1" id="Button" type="submit" value="Subscribe"
+						data-ng-disabled="userForm.$invalid" data-ng-click="getdata()" />
+					<!--  onclick="javascript:ValidateEmail()" -->
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+</body>
 </html>

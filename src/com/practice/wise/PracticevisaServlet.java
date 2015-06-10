@@ -18,6 +18,8 @@ import com.google.appengine.api.datastore.Query;
 import com.practice.wise.PracticeDatastore;
 import com.google.gson.Gson;
 
+import com.model.TotalUser;
+
 @SuppressWarnings("serial")
 public class PracticevisaServlet extends HttpServlet {
 	
@@ -42,10 +44,14 @@ public class PracticevisaServlet extends HttpServlet {
 				out.println(" total count  "  +totalcount);
 				request.setAttribute("count", totalcount);
 				
-				String json = new Gson().toJson(totalcount);
-				  response.setContentType("application/json");
-			//	 response.getWriter().write(json);
-				  	
+				TotalUser user=new TotalUser();
+				user.setTotaluser(totalcount);
+				user.setEmail(email);
+				
+				String json = new Gson().toJson(user);
+				response.setContentType("application/json");
+				response.getWriter().write(json);
+					 
 			}
 		 catch(Exception e)
 		 {
