@@ -1,58 +1,52 @@
- /*
-// create angular app
-    var validationApp = angular.module('validationApp', []);
+var app = angular.module('myApp', []);
 
-    // create angular controller
-   validationApp.controller('mainController', function($scope) {
+	function MyController($scope, $http) {
+	
+		$http({
+				method : 'POST',
+				url : 'practicevisaServlet'
+			}).success(function(data, status, headers, config) {
+				$scope.person = data;
+			}).error(function(data, status, headers, config) {
+				// called asynchronously if an error occurs
+				// or server returns response with an error status.
+			});
+	};	
 
-        // function to submit the form after all validation has occurred            
-        $scope.submitForm = function() {
-
-            // check to make sure the form is completely valid
-            if ($scope.userForm.$valid) {
-                alert('our form is amazing');
-            }
-        }
-            function MyController($scope, $http) {
-            	$scope.getdata=function(){
-            	$http({
-    				method : 'POST',
-    				url : 'PracticevisaServlet'
-    			}).success(function(data, status, headers, config) {
-    				$scope.person = data;
-    			}).error(function(data, status, headers, config) {
-    				// called asynchronously if an error occurs
-    				// or server returns response with an error status.
-    			});
-            };
-           }};
-
-*/
-
-
-
-		// create angular app
-		    var validationApp = angular.module('validationApp', []);
+	var validationApp = angular.module('validationApp', []);
+	
+	validationApp.controller('MainController', function($scope){
 		
-		    // create angular controller
-		    validationApp.controller('mainController', function($scope) {
-		
+		$scope.submit = function(){
+		    // Set the 'submitted' flag to true
+		    $scope.submitted = true;
+		    // Send the form to server
+		    // $http.post ...
+		    
+		  }
+	});
+
+	/*var validationApp = angular.module('validationApp', []);
+	
+	validationApp.controller('registerController', function($scope) {	
 		        // function to submit the form after all validation has occurred            
-		        $scope.submitForm = function() {
+	        $scope.submitForm = function() {
 		           //  check to make sure the form is completely valid
 		            if ($scope.userForm.$valid) {
-		              alert('Form Validations');
+		          //    alert('Form Validations');
 		           }
-		        };
-		     });
-		    
-		    validationApp.controller('myController', function($scope, $http) {
+	        };
+	}) ;
+		  */
+
+		   /* validationApp.controller('myController', function($scope, $http) {
 		  	        	$http({
 	    				method : 'POST',
 	    				url : 'practicevisaServlet'
 	    			}).success(function(data, status, headers, config) {
 	    				$scope.person = data;
 	    			}).error(function(data, status, headers, config) {
+	    				//	alert('Failed in mycontroller');
 	    				// called asynchronously if an error occurs
 	    				// or server returns response with an error status.
 	    			});
@@ -66,35 +60,12 @@
 			}).success(function(data, status, headers, config) {
 				$scope.person = data;
 			}).error(function(data, status, headers, config) {
+				// alert('Failed in registercontroller');
 				// called asynchronously if an error occurs
 				// or server returns response with an error status.
 			});
         });
-
+*/
     
 		    
-	/*	
-			var app = angular.module('myApp', []);
-		
-			function MyController($scope, $http) {
-				$http({
-				        method : 'POST',
-						url : 'PracticevisaServlet'
-						$scope.count="totalcount";
-						}.success(function(data, status, headers, config) {
-					//	$scope.person = data;
-						$scope.count=data;
-					}).error(function(data, status, headers, config) {
-						// called asynchronously if an error occurs
-						// or server returns response with an error status.
-					});
-		
-				};
-			};
-		
-		    
-			
-		    });
-		    
-   */ 
-  
+	

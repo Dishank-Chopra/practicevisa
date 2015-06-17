@@ -1,26 +1,23 @@
 @CHARSET "ISO-8859-1";
 
-<style>
-		
-        
-        	body{  
+			body{
+			background-image: url("bg.jpg");
 			min-height: 100%;
-			background-image: url("/practicevisa/war/css/bg.jpg");
-			background-repeat: no-repeat;
+ 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-position: center center; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;   	
 			}
-			
+
 			@font-face {
-			font-family: myFirstFont;
+			font-family: headingtFont;
 			src: url("poetsenone-regular.ttf");
 			}
 			
 			.heading{
-			font-family: myFirstFont;
+			font-family: headingtFont;
 			color: #d23641;
 			font-size: 140px;
 			text-align: center; 
@@ -29,7 +26,7 @@
 			top: -90px;
 			}
 			
-			.box{ 
+			.transbox{ 
 			position: fixed;
 			opacity: 0.5; 
 			background:#235021; 
@@ -37,6 +34,24 @@
 			width:573px;
 			top:252px;
 			left: 402px; 
+			
+			}
+			
+			@font-face {
+			font-family: transboxFont;
+			src: url("scriptbl.ttf");
+			}
+			
+			.transbox p
+			{
+			font-family: transboxFont;
+			color: #ffff00;
+			font-size: 48px;
+			text-align: center; 
+			position: fixed;
+			left: 449px;
+			top: 230px;
+			opacity: 100;
 			}
 			
 			.textbox1{
@@ -52,12 +67,21 @@
 			padding:5px 10px 5px 15px;
 			}
 			
+			/* input.data-ng-invalid.data-ng-dirty{
+			border-color: #2ecc71
+			}
+			
+			input.data-ng-valid.data-ng-dirty{
+			border-color: #2ecc71
+			} */
+			
 			@font-face {
-			font-family: myThirdFont;
+			font-family: validationFont;
 			src: url("frutiger lt 55 roman.ttf");
 			}
+			
 			.alerts{
-			font-family: myThirdFont;
+			font-family: validationFont;
 			position: fixed;
           	top: 450px; 
 			left: 449px;
@@ -75,5 +99,3 @@
 			font-family: Arial, Helvetica, sans-serif; 
 			font-size: x-large; 
 			}
-		
-	</style>
