@@ -17,13 +17,14 @@
 			}
 			
 			.heading{
-			font-family: headingtFont;
+			font-family:Aladin;
+			font-weight: 0;
 			color: #d23641;
-			font-size: 140px;
+			font-size: 160px;
 			text-align: center; 
 			position: fixed;
-			left: 400px;
-			top: -90px;
+			left: 450px;
+			top: -120px;
 			}
 			
 			.transbox{ 
@@ -44,7 +45,8 @@
 			
 			.transbox p
 			{
-			font-family: transboxFont;
+			font-family: Dancing Script;
+			font-weight: 0;
 			color: #ffff00;
 			font-size: 48px;
 			text-align: center; 
@@ -52,6 +54,11 @@
 			left: 449px;
 			top: 230px;
 			opacity: 100;
+			}
+			
+			.form-group{
+			position: fixed;
+            
 			}
 			
 			.textbox1{
@@ -81,7 +88,8 @@
 			}
 			
 			.alerts{
-			font-family: validationFont;
+			font-family: Maven Pro;
+			font-weight: 550;
 			position: fixed;
           	top: 450px; 
 			left: 449px;

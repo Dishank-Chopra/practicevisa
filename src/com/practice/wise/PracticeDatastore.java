@@ -61,7 +61,7 @@ public class PracticeDatastore {
 				Query qry = new Query("User");
 				totalCount = datastore.prepare(qry).countEntities(FetchOptions.Builder.withDefaults());
 				
-				System.out.println(" total users are: " +totalCount);
+				System.out.println(" total users in datastore are: " +totalCount);
 			
 				
 	//	log.info(qry.toString());
