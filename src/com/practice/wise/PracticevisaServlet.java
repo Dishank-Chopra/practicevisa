@@ -41,7 +41,18 @@ public class PracticevisaServlet extends HttpServlet {
 				String email=request.getParameter("email");
 				PracticeDatastore count=new PracticeDatastore();
 				int totalcount=count.saveUser(email);
-				out.println(" total count  "  +totalcount);
+				
+				int total=count.countUser();
+				 
+				TotalUser usr=new TotalUser();
+				usr.setTotaluser(total);
+				
+				String json1 = new Gson().toJson(usr);
+				response.setContentType("application/json");
+				response.getWriter().write(json1);
+				 System.out.println("json try " +json1 );
+				
+				System.out.println(" total count in try "  +totalcount);
 				request.setAttribute("count", totalcount);
 				
 				TotalUser user=new TotalUser();
@@ -51,14 +62,54 @@ public class PracticevisaServlet extends HttpServlet {
 				String json = new Gson().toJson(user);
 				response.setContentType("application/json");
 				response.getWriter().write(json);
+				
+	//			response.sendRedirect("index.html");
 					 
 			}
 		 catch(Exception e)
 		 {
+			 PracticeDatastore count=new PracticeDatastore();
 			 System.out.println("Exception found!!");
+			 int total=count.countUser();
+			 
+			 TotalUser usr=new TotalUser();
+			 usr.setTotaluser(total);
+			 
+			 String json = new Gson().toJson(usr);
+			 response.setContentType("application/json");
+			 response.getWriter().write(json);
+			 System.out.println(" json catch " +json );
 			 
 		 }
-		
+	}
+}
+
+			 
+			 /* PracticeDatastore count=new PracticeDatastore();
+		//	 System.out.println("Exception found!!");
+			 int totalcount2=count.countUser();
+		//	 System.out.println(".." +totalcount2);
+		//     out.println("..  " +totalcount2);
+		     
+		     TotalUser user=new TotalUser();
+		  	 user.setTotaluser(totalcount2);
+			
+		  	String json = new Gson().toJson(user);
+			response.setContentType("application/json");
+			response.getWriter().write(json);
+			
+	*/		// response.sendRedirect("index.html");
+			
+			/* String email=null;
+			 if(email==null){
+				 PracticeDatastore count=new PracticeDatastore();
+					int totalcount=count.saveUser(email);
+					System.out.println(" total count  "  +totalcount);
+					//request.setAttribute("count", totalcount);
+					
+			 }*/
+		 
+
 		// response.getWriter().println("Hello");
 		
 		/* DatastoreService datastore=DatastoreServiceFactory.getDatastoreService();
@@ -117,5 +168,4 @@ public class PracticevisaServlet extends HttpServlet {
 		}
 		
 		
-*/	}
-}
+*/	
